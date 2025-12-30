@@ -1,12 +1,12 @@
 # bsdeej
-Python app to monitor sliders for volume control
+Python app to monitor sliders for volume control. I created this after having many issues with the current deej app. I was going to start from scratch but found a post from August 2025 that makes a good starting point.
 
 Original source - https://bendiksens.net/posts/deej-sound-control-for-linux-written-in-python/
 
 The original has been modified as follows:
 * selectable master slide
 * all output device volumes are changed when master slide is changed
-* app process binary names are used instead of app names
+* app process binary names are used instead of app names (who wants to modify the file each time a version changes!)
 * volumes not changed unless slide value changes by +-5
 * moving slide up increases volume / moving it down decreases volume
 * tty device and number of sliders set via variables at top of script
