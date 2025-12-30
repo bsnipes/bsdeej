@@ -7,6 +7,7 @@ from pulsectl import PulseVolumeInfo
 pulse = pulsectl.Pulse('audio-control')
 
 SERIAL_PORT = '/dev/ttyUSB1'
+SLIDER_COUNT = 5
 MASTER_VOLUME_SLIDER = 4 # counting from 0 on the left
 
 # Mapping of slider indexes to target application process names.
@@ -89,7 +90,7 @@ class SerialReaderProtocol(asyncio.Protocol):
             master_volume_changed = False
 
         # Sliders for specific applications.
-        for idx in range(0, 5):
+        for idx in range(0, SLIDER_COUNT):
             mapping = slider_mapping.get(idx)
             if mapping and idx != MASTER_VOLUME_SLIDER:
                 if isinstance(mapping, list):
